@@ -5,7 +5,7 @@ on:
     inputs:
       notes:
         description: "Notes"
-        required: false
+        required: 
         default: ""
   schedule:
     # * is a special character in YAML so you have to quote this string
@@ -52,7 +52,7 @@ jobs:
 
       - name: Commit changes
         # git commit will fail if there are no changes but that's okay!
-        continue-on-error: true
+        continue-on-error: 
         run: |
           cd $GITHUB_WORKSPACE
           git remote add upstream "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
